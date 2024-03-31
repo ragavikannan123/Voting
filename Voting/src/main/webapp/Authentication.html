@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="Voting.css" rel="stylesheet" type="text/css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<title>auth</title>
+</head>
+<body>
+<div id="whole">
+	<header>
+		<p id="logo"></p>
+		<ul id="menu">
+			<li><a href="#about">About</a></li>
+			<li><a href="#contact">Contact</a></li>
+			<li onclick="showLogin()">Login<li>
+			<li class="signUpButton"  onclick="showSignUp()">SignUp</li>
+		</ul>
+	</header>
+	<div class="home">
+		<section class="homeText">
+			<h1>Online Voting System</h1>
+			<p class="aboutApp">With YourChoice's online voting system, your organization members can cast their votes anywhere and anytime with secure internet voting.</p>
+			<button class="signUpButton" id="getStart" onclick="showLogin()">Get Started</button>
+		</section>
+		<section id="homeImage" class="hImage"></section>
+	</div>
+	<div class="home" id="cave">
+		<section id="peopleImage" class="hImage"></section>
+		<section class="homeText">
+		<p id="impOfVote">Voting is important because it lets you choose who guides the direction and makes decisions that affect everyone. It's like having a voice in how things are done and making sure your opinion counts.</p>
+		</section>
+	</div>
+	<div class="home" id="about">
+		<section class="homeText" id="aboutUs">
+			<h1>About Us</h1>
+			<p><i class="fa-solid fa-circle"></i> At Your Choice, we've made voting easy and accessible for everyone. <br><br><i class="fa-solid fa-circle"></i> Our online platform allows you to vote from anywhere, whether you're at home, at work, or on-the-go.<br><br><i class="fa-solid fa-circle"></i> We believe that everyone should have a voice in important decision that affect their lives. <br><br><i class="fa-solid fa-circle"></i> That's why we've created a simple and secure way for you to participate in elections. <br><br><i class="fa-solid fa-circle"></i> With just a few clicks, you can cast your vote and make your voice heard.</p>
+		</section>
+		<section id="aboutImage" class="hImage"></section>
+	</div>
+	<div class="home" id="contact">
+		<<!-- section class="contact">
+			<label>Name</label><br>
+			<input type="text" class="input" id="contactName"><br><br>
+			<label>Email</label>
+			<label>Phone Number</label><br>
+			<input type="email" class="input" id="contactEmail">
+			<input type="number" class="input" id="contactPhone"><br><br>
+			<label>Message</label><br>
+			<textArea class="input" id="contactText"></textArea><br><br>
+			<button type="submit" id="contactSubmit">Submit</button>
+		</section> -->
+		<section class="contact">
+			<h1>Contact Us</h1>
+			<p class="aboutApp">For questions, technical assistance, or collaboration opportunities via the contact information provided.<br><br><i class="fa-solid fa-phone conIcon"></i>  +123-456-7890<br><i class="fa-solid fa-envelope conIcon"></i>  hello@yourchoice.com<br><i class="fa-solid fa-location-dot conIcon"></i>  123, St.city, Mumbai.</p>
+		</section>
+	</div>
+	<footer>
+		<p><i class="fa-brands fa-instagram footerIcon"></i><i class="fa-brands fa-facebook-f footerIcon"></i><i class="fa-brands fa-x-twitter footerIcon"></i><br>www.yourchoice.com</p>
+	</footer>
+	</div>
+	<div id = "loginPage" class = "authentication">
+		
+			<i class="fa-solid fa-xmark close" onclick="closePage()"></i>
+			<img src="images/vote.png" width=70% class="voteImage">
+			<h2>Welcome back!</h2>
+			<label class="autLabel">Email</label><br>
+			<input type = "email" class = "autInput" id = "loginEmail"><br><br>
+			<label class="autLabel">Password</label><br>
+			<input type = "password" class = "autInput" id = "loginPassword"><br><br>	
+			<button type="submit" onclick="login()" class="autInput loginSubmit" >Login</button>
+	
+		<p>Don't have an account yet? <span onclick="showSignUp()">SignUp</span></p>
+	</div>
+	<div id = "signUpPage" class = "authentication">
+		<i class="fa-solid fa-xmark close" onclick="closePage()"></i>
+		<img src="images/vote.png" width=70% class="voteImage">
+		<h2>Create your account!</h2>
+		<form id="signUpForm">
+			<label class="autLabel">User name :</label>
+			<input type = "text" class = "autInput" id="name"><br>
+			<label class="autLabel">Email :</label>
+			<input type = "email" class = "autInput" id="email"><br>
+			<label class="autLabel">Password :</label>
+			<input type = "password" class = "autInput" id="password"><br>
+			<label class="autLabel">Confirm password :</label>
+			<input type = "password" class = "autInput" id="confirmPassword"><br>
+			<button type="submit" onclick="continueRegister(event)" class="autInput continueSubmit">Continue</button>
+		</form>
+		<p>Already have an account? <span onclick="showLogin()">Login</span></p>
+	</div>
+	<div id = "register" class = "authentication">
+		<i class="fa-solid fa-xmark close" onclick="closePage()"></i>
+		<img src="images/vote.png" width=70% class="voteImage">
+		<h2>Registration form!</h2>
+		<!-- <form id="registerForm"> -->
+			<label class="autLabel">New Organization :</label><br>
+			<select class ="autInput" id="isNewOrg">
+  				<option value="Yes">Yes</option>
+  				<option value="No">No</option>
+			</select><br>
+			<label class="autLabel">DOB :</label>
+			<input type = "Date" class = "autInput" id="dob"><br>
+			<label class="autLabel">Gender :</label><br>
+			<select class ="autInput" id="gender">
+  				<option value="MALE">Male</option>
+  				<option value="FEMALE">Female</option>
+  				<option value="NB">NB</option>
+			</select><br>
+			<label class="autLabel">Phone Number :</label>
+			<input type = "number" class = "autInput" id="phone"><br>
+			<label class="autLabel">Organization Name :</label>
+			<input type = "text" class = "autInput" id="org"><br>
+			<label class="autLabel">Photo: </label>
+			<input type="file" class="autInput" id="photo" accept="image/*" name="image"><br>
+			<button type="submit" onclick="signUp()" class="autInput signUpSubmit">SignUp</button>
+		<!-- </form> -->
+	</div>
+	<script src="Voting.js"></script>
+	<script src="https://kit.fontawesome.com/4b5155cd74.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="admin.css" rel="stylesheet" type="text/css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+		<title>Insert title here</title>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	</head>
+	<body>
+		<div id="whole">
+			<header>
+				<p id="logo" onclick="home()"></p>
+			</header>
+			<div id="wholeView">
+				<div id="menu">
+					<ul>
+					    <li class="active" onclick="highlight(this, 'dashBoard')">Dashboard</li>
+					    <li onclick="highlight(this, 'elections')">Elections</li>
+					    <li onclick="highlight(this, 'applicant')">Applicants</li>
+					    <li onclick="highlight(this, 'voters')">Voters</li>
+					</ul>
+				</div>
+				<div id="view">
+					<div id="dashBoard" class="menus">
+						<div id="currentElections">
+							<h1>Current Elections</h1>
+							<div id="current"></div>
+						</div>
+						<div id="graphs">
+						   <div class="chart">
+						   		<h1 class="head">Elections in year</h1>
+						   		<canvas id="barChart"  style="width:31%; height:30%;"></canvas>
+							</div>
+							<div class="chart chart2">
+								<h1 class="head">Votes in Election</h1>
+								<canvas id="lineChart"  style="width:31%; height:30% ;background-color: white;"></canvas>
+	  						</div>
+						</div>
+					</div>
+					<div id="elections" class="menus"></div>
+					<div id="applicant" class="menus"></div>
+					<div id="voters" class="menus"></div>
+				</div>
+			</div>
+		</div>
+		<script src="admin.js"></script>
+		<script src="https://kit.fontawesome.com/4b5155cd74.js" crossorigin="anonymous"></script>
+	</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="voter.css" rel="stylesheet" type="text/css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+		<title>Insert title here</title>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	</head>
+	<body>
+		<div id="whole">
+			<header>
+				<p id="logo" onclick="home()"></p>
+			</header>
+			<div id="wholeView">
+				<div id="menu">
+					<ul>
+					    <li class="active" onclick="highlight(this, 'dashBoard')">Dashboard</li>
+					    <li onclick="highlight(this, 'elections')">Elections</li>
+					    <li onclick="highlight(this, 'profile')">Profile</li>
+					</ul>
+				</div>
+				<div id="view">
+					<div id="dashBoard" class="menus">
+						<div id="currentElections">
+							<h1>Current Elections</h1>
+							<div id="current"></div>
+						</div>
+						<div id="graphs">
+						   <div class="chart">
+						   		<h1 class="head">Elections</h1>
+						   		<canvas id="pieChart"  style="width:31%; height:30%;"></canvas>
+							</div>
+							<div class="chart org">
+						   		<h1 class="head">Organization details</h1>
+						   		<div id="orgDetails">
+						   			<h3 id="orgName"></h3>
+						   			<p id="adminName"></p>
+						   			<p id="adminEmail"></p>
+						   		</div>
+							</div>
+						</div>
+					</div>
+					<div id="elections" class="menus"></div>
+					<div id="profile" class="menus">
+						<section id="imgSection">
+							<section id="photo"></section>
+						</section>
+						<section id="profileDetails">
+							<section class="profileDetails">
+								<p class="lable">Name</p>
+								<p id="name" class="content"></p>
+							</section>
+							<section class="profileDetails">
+								<p class="lable">Email</p>
+								<p id="email" class="content"></p>
+							</section>
+							<section class="profileDetails">
+								<p class="lable">DOB</p>
+								<p id="dob" class="content"></p>
+							</section>
+							<section class="profileDetails">
+								<p class="lable">Gender</p>
+								<p id="gender" class="content"></p>
+							</section>
+							<section class="profileDetails">
+								<p class="lable">Phone</p>
+								<p id="phone" class="content"></p>
+							</section>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="voter.js"></script>
+		<script src="https://kit.fontawesome.com/4b5155cd74.js" crossorigin="anonymous"></script>
+	</body>
+</html>

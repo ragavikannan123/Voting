@@ -1,0 +1,426 @@
+html{
+	width:100%;
+	height:100%;
+}
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+body{
+	width:100%;
+	height:100%;
+	margin-top:-1%;
+	scroll-behavior: smooth;
+	font-family: "Outfit", sans-serif;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#whole{
+	width:100%;
+	height:100%;
+}
+
+header{
+	background-color:white;
+	position:fixed;
+	height: 10%;
+    width: 100%;
+    box-shadow: 0px 2px 7px #00000069;
+    z-index:1;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+#logo{
+	cursor:pointer;
+    width: 20%;
+    height: 40%;
+    background-image: url(images/logo.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top:1%;
+}
+
+#wholeView{
+	width:100%;
+	height:92%;
+	margin-top:5%;
+	position:absolute;
+	display:flex;
+}
+
+#menu{
+	width:20%;
+	height:100%;
+	padding:2%;
+	box-shadow: 1px 0px 7px #00000069;
+	font-family: "Josefin Sans", sans-serif;
+	font-size:25px;
+}
+
+ul {
+    list-style: none;
+}
+
+li{
+	margin-top:10%;
+	cursor:pointer;
+}
+li.active {
+	
+	background-color: #1640794a;
+    border-radius: 15px;
+    padding: 5% 5%;
+    width: 70%;
+}
+
+#view{
+	width:80%;
+	height:100%;
+	background-color: #f3f0f0a3;
+}
+
+#dashBoard{
+	width:100%;
+	height:100%;
+	display:flex;
+}
+
+h1{
+	color:#303030f2;
+	font-size:25px;
+	font-weight:500;
+}
+
+#currentElections{
+	width:50%;
+	height:93%;
+	background-color: white;
+	margin:2%;
+	padding:2%;
+	border-radius:10px;
+	overflow:scroll;
+}
+
+#graphs{
+	width:45%;
+	height:90%;
+	margin:2% 2% 2% 0;
+	
+}
+
+.chart{
+	width:99%;
+	height:50.5%;
+	background-color: white;
+	padding:7%;
+	border-radius:10px;
+}
+
+.chart2{
+	margin-top:3%;
+}
+
+.head{
+	margin-top:-2%;
+}
+
+.curEleDiv {
+    background-color: #69a4f41c;
+    border-radius: 10px;
+    padding: 3%;
+    margin: 5% 0%;
+    line-height: 40px;
+}
+
+.curEleTitle{
+	color:#01337a;
+	font-weight:600;
+}
+
+.curEleDate{
+	margin-left:50%;
+	font-size:18px;
+	font-weight:600;
+}
+
+
+
+#applicant, #elections, #voters {
+    display: none;
+}
+
+#applicant{
+    width: 100%;
+    height: 100%;
+    padding: 3%;
+    overflow:scroll;
+}
+
+.applicantDiv {
+    width: 100%;
+    height: 30%;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+}
+
+.applicantImg {
+    width: 12%;
+    height: 96%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.applicantDetails {
+    width: 40%;
+    height: 96%;
+    margin-left:5%;
+    position:relative;
+}
+
+.applicantsDetailsDiv {
+    display: flex;
+    width: 100%;
+    height:20%;
+}
+
+.applicantLable {
+	width:25%;
+    color: gray;
+    font-size: 18px;
+}
+
+.applicantContent{
+	width: 50%;
+    border-bottom: gray;
+}
+
+.logo{
+	width:17%;
+	height:260%;
+	background-position:center;
+	background-size:cover;
+	border-radius:50%;
+}
+
+ #voters {
+    width: 100%;
+    height: 100%;
+    padding: 3%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow:scroll;
+}
+
+.voterDiv {
+    width: 45%;
+    height: 30%;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+}
+
+.voterImg {
+    width: 35%;
+    height: 96%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.voterDetails {
+    width: 70%;
+    height: 96%;
+    margin-left:5%;
+}
+
+.removeApplicant, .addApplicant{
+	cursor:pointer;
+	width:16%;
+	position: absolute;
+    margin-top: 15%;
+    margin-left: 60%;
+	padding:2%;
+	border-radius:5px;
+	background-color:green;
+	color:white;
+} 
+
+.removeApplicant{
+    margin-left: 80%;
+	background-color:red;
+}
+
+
+#elections {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    flex-wrap: wrap;
+    overflow: scroll;
+    padding: 2%;
+}
+
+.electionsDiv{
+	width:50%;
+	height:100%;
+}
+.eleside{
+	width: 45%;
+    height: 100%;
+}
+
+.eleDiv {
+	cursor:pointer;
+    width: 100%;
+    height: 25%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2%;
+    margin: 2% 0%;
+    line-height: 40px;
+}
+.eleTitle {
+    font-size: 22px;
+    color: #01337a;
+    font-weight: 700;
+}
+
+.eleDate{
+	margin-left: 55%;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+#candidates{
+	padding:2%;
+	width:100%;
+	height:100%;
+	display:flex;
+	justify-content:space-between;
+}
+
+.candidateDetails{
+	width: 45%;
+    height: 100%;
+    background-color: white;
+    padding: 2%;
+    border-radius: 10px;
+    overflow:scroll;
+}
+
+.candidateDiv{
+	width: 100%;
+    height: 30%;
+    background-color: #EFF5FE;
+    padding: 2%;
+    border-radius: 10px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.candidateImg{
+	width: 30%;
+    height: 96%;
+    background-position: center;
+    background-size: cover;
+}
+
+.canDetails{
+	width: 65%;
+    height: 96%;
+}
+
+.candidateDetailsDiv{
+	width: 60%;
+    height: 20%;
+	display:flex;
+	justify-content:space-between;
+}
+.candidateLabel{
+	color: gray;
+    font-size: 18px;
+}
+
+.canlogo{
+    width: 25%;
+    height: 130%;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+}
+
+.vote{
+	background-color: #004AAD;
+    width: 15%;
+    border-radius: 5px;
+    padding: 2% 3%;
+    color: white;
+    margin-left: 80%;
+}
+
+.canside{
+	width:50%;
+}
+
+.elecDetails{
+	width: 100%;
+    height: 45%;
+    text-align:cente;
+    padding: 15% 25%;
+    line-height: 40px;
+    background-color: white;
+    position:relative;
+    border-radius:10px;
+}
+
+
+.addElection{
+	width: 100%;
+    height: 50%;
+    background-color: white;
+    padding: 5%;
+    border-radius: 10px;
+    margin-top:2.5%;
+}
+
+.addInput{
+	width: 50%;
+    height: 50%;
+}
+
+.addSubmit{
+	cursor:pointer;
+	color: white;
+    background-color: #004AAD;
+    border: none;
+    padding: 2%;
+    border-radius: 5px;
+    margin-left: 80%;
+}
+
+i{
+	cursor:pointer;
+}
+
+
+.close{
+	cursor:pointer;
+	font-size:20px;
+	color:gray;
+}
