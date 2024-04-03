@@ -18,10 +18,14 @@ function GetDetails(callback) {
             if (xhr.status === 200) {
                 var response = JSON.parse(xhr.responseText);
                 if (response.statusCode === 200) {
-                    // Store response data in jsonData variable
-                    jsonData = response;
-                    // Call the callback function to execute other functions
+                   if(response.message == "Loggedout"){
+						window.location.href = "Authentication.html";
+					}
+					else{
+						jsonData = response;
                     callback();
+                    }
+                
                 } else {
                     console.error("Error: " + response.message);
                 }
@@ -846,3 +850,19 @@ function RemoveVoter(id) {
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(json);
 }
+
+function logout() {
+   
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            
+            window.location.href = "Authentication.html";
+         } 
+    };
+
+    xhr.open("POST", "http://localhost:8080/Voting/LogoutServlet", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send();
+}
+

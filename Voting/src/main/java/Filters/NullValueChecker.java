@@ -19,7 +19,7 @@ import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebFilter({"/Login", "/AddElection"})
+@WebFilter({"/Login", "/AddElection", "/SignUpAdmin", "/SignUpUser", "/ApplyForCandidate"})
 public class NullValueChecker implements Filter {
 	
 	Logger logger = new Loggers(RegexChecking.class).getLogger();
@@ -32,7 +32,6 @@ public class NullValueChecker implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
-    	System.out.println("get");
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         StringBuilder sb = new StringBuilder();
@@ -50,7 +49,7 @@ public class NullValueChecker implements Filter {
         } catch (JSONException e) {
             logger.error("Error parsing JSON data: " + e.getMessage());
         }
-        
+
         boolean hasNullValue = false;
         if (jsonObject != null) {
             Iterator<String> keys = jsonObject.keys();
@@ -59,7 +58,8 @@ public class NullValueChecker implements Filter {
                 Object value;
 				try {
 					value = jsonObject.get(key);
-					 if (value == null) {
+					 if (value == "") {
+						 System.out.println("null");
 		                    hasNullValue = true;
 		                    break;
 		                }
@@ -86,7 +86,6 @@ public class NullValueChecker implements Filter {
             httpResponse.getWriter().write(responseObject.toString());
         } 
         else {
-        	System.out.println("get");
         	request.setAttribute("object", jsonObject);
             chain.doFilter(request, response);
         }

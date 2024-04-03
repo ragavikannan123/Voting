@@ -219,7 +219,9 @@ h2{
 #signUpPage,#loginPage,#register,#applyCandidate{
 	display:none;
 	position: fixed;
-  	top: 50%;
+	height:85%;
+	width:35%;
+  	top: 53%;
   	left: 50%;
   	transform: translate(-50%, -50%);
   	z-index: 2;
@@ -227,9 +229,22 @@ h2{
   	padding:3% 5%;
   	border-radius:10px;
 }
+
+#loginPage{
+	height: 65%;
+    width: 30%;
+    top: 50%;
+}
+
 .voteImage{
-	margin-top:-30%;
-	margin-left:13%;
+    background-image: url(images/vote.png);
+    background-position: center;
+    background-size: cover;
+    height: 20%;
+    width: 70%;
+    margin-top: -10%;
+    margin-bottom: 15%;
+    margin-left: 15%;
 }
 #whole{
 	width:100%;

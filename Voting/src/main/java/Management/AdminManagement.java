@@ -195,7 +195,7 @@ public class AdminManagement implements Management{
 	@Override
 	public JSONArray getCandidates(int elecId) throws SQLException, JSONException {
 	
-	    String query1 = "select Apply_Candidate.*, Voters.*, Elections.name as election_name, Users.photo, Candidates.id as candidate_id from Candidates join Apply_Candidate on Apply_Candidate.id = Candidates.apply_id join Elections on Elections.id = Apply_Candidate.election_id join Voters on Apply_Candidate.voter_id = Voters.id join Users on Users.id = Voters.user_id where Elections.id = ?";
+	    String query1 = "select Apply_Candidate.*, Voters.*, Elections.name as election_name, Users.*, Candidates.id as candidate_id from Candidates join Apply_Candidate on Apply_Candidate.id = Candidates.apply_id join Elections on Elections.id = Apply_Candidate.election_id join Voters on Apply_Candidate.voter_id = Voters.id join Users on Users.id = Voters.user_id where Elections.id = ?";
 	    PreparedStatement preparedStatement1 = connection.prepareStatement(query1);
 	    preparedStatement1.setInt(1, elecId);
 	    ResultSet resultSet1 = preparedStatement1.executeQuery();

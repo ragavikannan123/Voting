@@ -58,22 +58,22 @@ public class ApplyForCandidate extends HttpServlet {
 	        }
 	    }
 	    
-//	    JSONObject jsonObject = (JSONObject) request.getAttribute("object");
+	    JSONObject jsonObject = (JSONObject) request.getAttribute("object");
 		
 		int elecId = 0;
 		String logo = null;
 		
 		try {
-			StringBuilder sb = new StringBuilder();
-	        BufferedReader reader = request.getReader();
-	        String line;
-	        
-	        while ((line = reader.readLine()) != null) {
-	            sb.append(line);
-	        }
-	        System.out.println(id);
-	        System.out.println(sb);
-	        JSONObject jsonObject = new JSONObject(sb.toString());
+//			StringBuilder sb = new StringBuilder();
+//	        BufferedReader reader = request.getReader();
+//	        String line;
+//	        
+//	        while ((line = reader.readLine()) != null) {
+//	            sb.append(line);
+//	        }
+//	        System.out.println(id);
+//	        System.out.println(sb);
+//	        JSONObject jsonObject = new JSONObject(sb.toString());
 			elecId = jsonObject.getInt("elecId");
 			logo = jsonObject.getString("logo");
 		} 

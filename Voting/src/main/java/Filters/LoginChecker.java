@@ -12,12 +12,18 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import Common.Loggers;
+
 /**
  * Servlet Filter implementation class LoginChecker
  */
-//@WebFilter("/*")
+@WebFilter({"/GetDetailsForUser", "/GetDetails"})
 public class LoginChecker implements Filter {
-
+	Logger logger = new Loggers(RegexChecking.class).getLogger();
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         // Initialization code, if any
@@ -29,18 +35,23 @@ public class LoginChecker implements Filter {
     	HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         String servletPath = httpRequest.getServletPath();
-        
-        if (servletPath.equals("/login")) {
-            chain.doFilter(request, response);
-            return;
-        }
-
+   
         if (httpRequest.getCookies() != null) {
             chain.doFilter(request, response);
-            return;
+//            return;
         }
         else {
-//        	 httpResponse.sendRedirect("Voting/Authentication.html");
+        	 //httpResponse.sendRedirect("Voting/Authentication.html");
+        	JSONObject responseObject = new JSONObject();
+            try {
+                responseObject.put("statusCode", 500);
+                responseObject.put("message", "Loggedout");
+            } catch (JSONException e) {
+                logger.error("Error creating response JSON: " + e.getMessage());
+            }
+            
+//            httpResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            httpResponse.getWriter().write(responseObject.toString());
         }
        
     }
